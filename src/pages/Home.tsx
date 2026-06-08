@@ -35,65 +35,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-// Watermark
-function Watermark() {
-  const ROWS = 18;
-  const COLS = 7;
-  return (
-    <div
-      aria-hidden="true"
-      style={{
-        position: "fixed",
-        top: "-55%",
-        left: "-55%",
-        width: "210%",
-        height: "210%",
-        pointerEvents: "none",
-        zIndex: 20,
-        transform: "rotate(-32deg)",
-        transformOrigin: "center",
-        display: "grid",
-        gridTemplateColumns: `repeat(${COLS}, 1fr)`,
-        gridTemplateRows: `repeat(${ROWS}, 1fr)`,
-        alignItems: "center",
-        justifyItems: "center",
-        overflow: "hidden",
-        userSelect: "none",
-      }}
-    >
-      {Array.from({ length: ROWS * COLS }).map((_, i) => (
-        <div key={i} style={{ textAlign: "center", lineHeight: 1 }}>
-          <span
-            style={{
-              fontFamily: "Georgia, serif",
-              fontSize: "10px",
-              fontWeight: 300,
-              letterSpacing: "10px",
-              color: "rgba(28, 100, 28, 0.085)",
-              whiteSpace: "nowrap",
-              display: "block",
-            }}
-          >
-            HIRED NEST
-          </span>
-          <span
-            style={{
-              fontFamily: "Georgia, serif",
-              fontSize: "5px",
-              letterSpacing: "16px",
-              color: "rgba(28, 100, 28, 0.05)",
-              display: "block",
-              marginTop: "14px",
-            }}
-          >
-            {"· · · · ·"}
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 // Navigation
 const navItems = [
   { name: "About", href: "#about" },
@@ -859,7 +800,6 @@ function Footer() {
 export default function Home() {
   return (
     <div className="min-h-[100dvh] flex flex-col font-sans selection:bg-secondary/30 selection:text-primary">
-      <Watermark />
       <Navigation />
       <main className="flex-1 relative z-10">
         <Hero />
